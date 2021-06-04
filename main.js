@@ -5,7 +5,12 @@ rover_width=60;
 rover_x=10;
 rover_y=10;
 image1_rover="rover.png";
-image2_mars="images.jpg";
+
+var mars_imgs=["images (1).jpg","images (2).jpg","mars.jpg","images.jpg"];
+
+var bckd_img=Math.floor(Math.random()*4);
+
+image2_mars=mars_imgs[bckd_img];
 
 function add(){
     background_imageTag= new Image();
@@ -22,7 +27,7 @@ function rover_load(){
 }
 
 function background_load(){
-    ctx.drawImage(background_imageTag,0,0,ctx.canvas.width,ctx.canvas.heigth);
+    ctx.drawImage(background_imageTag,0,0,canvas.width,canvas.height);
 }
 
 window.addEventListener("keydown", mykeydown);
@@ -54,7 +59,7 @@ function mykeydown(e){
 function up(){
 
     if(rover_y>=0){
-        rover_y -= 5;
+        rover_y -= 10;
         console.log("rover Y= "+rover_y + "rover X="+rover_x);
         background_load();
         rover_load();
@@ -63,8 +68,8 @@ function up(){
 
 function down(){
 
-    if(rover_y<=750){
-        rover_y += 5;
+    if(rover_y<=600){
+        rover_y += 10;
         console.log("rover Y= "+rover_y + "rover X="+rover_x);
         background_load();
         rover_load();
@@ -74,7 +79,7 @@ function down(){
 function left(){
 
     if(rover_x>=0){
-        rover_x -= 5;
+        rover_x -= 10;
         console.log("rover Y= "+rover_y + "rover X="+rover_x);
         background_load();
         rover_load();
@@ -83,8 +88,8 @@ function left(){
 
 function right(){
 
-    if(rover_x<=1000){
-        rover_x += 5;
+    if(rover_x<=800){
+        rover_x += 10;
         console.log("rover Y= "+rover_y + "rover X="+rover_x);
         background_load();
         rover_load();
