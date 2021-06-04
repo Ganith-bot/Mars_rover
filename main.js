@@ -21,7 +21,7 @@ function add(){
     rover_imageTag.onload= rover_load;
     rover_imageTag.src= image1_rover;
 }
-
+ 
 function rover_load(){
     ctx.drawImage(rover_imageTag,rover_x,rover_y,rover_width,rover_height);
 }
